@@ -8,24 +8,44 @@ function submitForm(name, hometown) {
   var guestlist = document.getElementById("guestlist");
   var n =  document.getElementById("name");
   var h =  document.getElementById("hometown");
-  guestlist.innerHTML += "<li>" + name.value + ". " + hometown.value + "</li>";
+  var currentguestlist = localStorage.getItem("guestlist");
+  localStorage.setItem("guestlist",currentguestlist + "<li>" + name + "." + hometown + "</li>");
+  guestlist.innterHTML += "<li>" + name + ". " + hometown + "</li>";
   n.value = "";
   h.value = "";
   n.focus();
   return false;
 }
 
-function checkStorage(){
+function clearStorageGB() {
+  var guestlist = document.getElementById("guestlist");
+  guestlist.innerHTML = "";
+  localStorage.setItem("guestlist","");
+}
+  
+function checkStorageGB(){
+  var guestlist = document.getElementById("guestlist");
+  var currentguestlist = localStorage.getItem("guestlist", answer.list);
+  guestlist.innterHTML = currentguestlist;
+}
 
-var answerlist = document.getElementById("answerlist");
-var currentanswers = localStorage.getItem("answerlist", answer.list);
-answerlist.innterHTML = currentanswers;
+
+function clearStorage() {
+  var answerlist = document.getElementById("answerlist");
+  answerlist.innerHTML = "";
+  localStorage.setItem("answerlist","");
+}
+  
+function checkStorage(){
+  var answerlist = document.getElementById("answerlist");
+  var currentanswers = localStorage.getItem("answerlist", answer.list);
+  answerlist.innterHTML = currentanswers;
 }
 
 function submitAnswer(answer) {
   // search the DOM for a specific tag with id "guestlist"
   var answerlist = document.getElementById("answerlist");
-  localStorage.setItem("answerlist", answer.value);
+  localStorage.setItem("answerlist",currentanswers +"<br />" + answer.value);
   answerlist.innerHTML += answer.value + "<br />" + answer.value;
   answer.value = "";
   answer.focus();
