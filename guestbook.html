@@ -8,11 +8,11 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body> onload="checkStorageGB()">
-  <h1>Sign our guestbook below</</h1>
-  <form action="#" onsubmit="return submitForm(this.name, this.hometown);">
+<body onload="loadRemote()">
+  <h1>Please sign our guest list below</h1>
+  <form action="#" onsubmit="return submitForm(this.name.value, this.hometown.value);">
     <label>Name:</label>
-    <input id="name"/><br />
+    <input id="name" /><br />
     <label>Hometown:</label>
     <input id="hometown" /><br />
     <label> </label>
@@ -20,14 +20,15 @@
   </form>
   <h2>Guest List</h2>
   <ol id="guestlist">
-    <!-- Example hard-coded date
+    <!-- Example hard-coded data
     <li>Brian Toone. Birmingham, Alabama</li>
-    <li>John Smith Mephis, Tennessee</li>
+    <li>John Smith. Memphis, Tennessee</li>
     -->
   </ol>
-  <a href="#" onclick="if (confirm('are you sure?')) {clearStorageGB();} return false;">reset guestbook</a><br />
+  <a href="#" onclick="if (confirm('are you sure?')) { clearStorageGB(); } return false;">reset guestbook</a><br />
   <a href="index.html">Return to home page</a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 
-  <html>
+</html>

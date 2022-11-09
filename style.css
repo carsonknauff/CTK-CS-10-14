@@ -4,28 +4,28 @@ html, body {
 }
 
 h2 {
-color: #0c2340; /* samford blue*/
+  color: #0c2340; /* samford blue */
 }
 
 h1 {
-color:  #bd1f2d; 
+  color: #bd1f2d;
 }
 
-h3{
-color: #64CCC9
+h3 {
+  color: #64CCC9
 }
 
 label {
   font-weight: bold;
   display:inline-block;
-  width:155px;
+  width:100px;
   text-align:right;
 }
 
-input{
+input {
   margin-bottom: 12px;
 }
 
-form{
-width:290px;  
+form {
+  width:290px;
 }
